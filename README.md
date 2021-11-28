@@ -21,33 +21,9 @@ TECHNIQUES</h3>
     <a href="https://github.com/BSH2409/Minor_Project/issues">Request Feature</a>
   </p>
 </div>
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#advantages">Advantages</a></li>
-    <li><a href="#applications">Applications</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributions">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
 
 ## About The Project
+
 <div align="center" id="about-the-project">
 <img src="images/_main.jpg" alt="main">
  </div>
@@ -204,29 +180,9 @@ We find the ratio of height and width of the eye to infer the open or close stat
   </div>
 <p align="right">(<a href="#top">↑</a>)</p>
 
-## Contributions
-
-This project is a result of teamwork and wouldn't be possible without their help and our mentor's guidance.
-
-<p align="right">(<a href="#top">↑</a>)</p>
-
-## License
-
-<p align="right">(<a href="#top">↑</a>)</p>
-
 ## Contact
 
 Bhartik Harchand - [Instagram](https://www.instagram.com/_._bsh_._/) - bsh.bhartik@gmail.com
 
 Project Link: [https://github.com/BSH2409/Minor_Project](https://github.com/BSH2409/Minor_Project)
 
-<p align="right">(<a href="#top">↑</a>)</p>
-
-
-## References
-
-* []()
-* []()
-* []()
-
-<p align="right">(<a href="#top">↑</a>)</p>
