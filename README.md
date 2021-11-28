@@ -10,7 +10,6 @@ ACCIDENTS BY USING ML
 TECHNIQUES</h3>
 
   <p align="center">
-    project_description
     <br />
     <a href="https://github.com/BSH2409/Minor_Project"><strong>Explore the docs »</strong></a>
     <br />
