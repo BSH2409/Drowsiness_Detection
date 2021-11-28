@@ -118,5 +118,5 @@ class Video(threading.Thread):
                 (x, y) = landmarks[n]
                 cv2.circle(face_frame, (x, y), 1, (255, 0, 0), -1)
 
-        ret, jpg = cv2.imencode('.jpg', face_frame)
+        ret, jpg = cv2.imencode('.jpg',frame)
         return jpg.tobytes()
