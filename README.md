@@ -179,11 +179,13 @@ Voilà, All Set.
 The below image is an example of a Dlib's 68 points model. There we can see that points from 1 to 68. But sometimes we don't need all 68 feature points, then for that, we will use only the eye landmarks and customize those points according to our requirements.
 <div align="center"><img src="images/dlib.png" alt="68-landmark"></div><br />
 We need to initialize dlib’s HOG + Linear SVM-based face detector and then load the facial landmark predictor from disk:
+
 ```sh
-detector = dlib.get_frontal_face_detector()
-predictor = dlib.shape_predictor("predictor\\shape_predictor_68_face_landmarks.dat")
+  detector = dlib.get_frontal_face_detector()
+  predictor = dlib.shape_predictor("predictor\\shape_predictor_68_face_landmarks.dat")
 ```
-For further References on Dlib visit : [68_landmark](https://www.pyimagesearch.com/2017/04/03/facial-landmarks-dlib-opencv-python/)
+For further References on Dlib visit : 
+[Facial Landmark](https://www.pyimagesearch.com/2017/04/03/facial-landmarks-dlib-opencv-python/)
 
 Drowsiness Classifier:
 We use the EAR(Eye Aspect Ratio) to determine whether the user is active/drowsy/asleep.
