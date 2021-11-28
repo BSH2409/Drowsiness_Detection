@@ -104,9 +104,9 @@ This is an example of how you may give instructions on setting up your project l
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
-The requirement for this Python project is a webcam through which we will capture images.
-We need to have Python ([3.6](https://www.python.org/downloads/release/python-360/)version recommended) installed on your system.
-Any IDE would be good to run the project([Pycharm](https://www.jetbrains.com/pycharm/download/#section=windows) Recommended ).
+The requirement for this Python project is a webcam through which we will capture images.<br />
+We need to have Python ([3.6](https://www.python.org/downloads/release/python-360/) version recommended) installed on your system.<br />
+Any IDE would be good to run the project([Pycharm](https://www.jetbrains.com/pycharm/download/#section=windows) Recommended ).<br />
 * check version of python installed
   ```sh
   py --version
