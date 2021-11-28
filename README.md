@@ -49,8 +49,9 @@ TECHNIQUES</h3>
 </details>
 
 ## About The Project
-
-[![Product Name Screen Shot][product-screenshot]]
+<div align="center" id="about-the-project">
+<img src="images/_main.jpg" alt="main">
+ </div>
 The attention level of driver degrade because of less sleep, long continuous driving or any
 other medical condition like brain disorders etc. Several surveys on road accidents says that
 around 30 percent of accidents are caused by fatigue of the driver. When driver drives for
@@ -71,7 +72,6 @@ following:
 3. Behavioural measures
 
 <h4>Proposed Method</h4>
-<br/>
 We use the approach based on behavioural measures as this approach will be mostly
 focusing on amount of eye closure also called (PERCLOS) percentage of closure as it
 provides the most accurate information on drowsiness. It is also non-intrusive in nature,
@@ -82,12 +82,11 @@ system includes face identification and tracking, detection and location of the 
 human eye tracking, eye state detection, and driver fatigue testing. The key parts of the
 detection framework fused the detection and location of human eyes and driver fatigue
 testing.
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="right">(<a href="#top">↑</a>)</p>
 
 
 
 ### Built With
-
 * [OpenCV](https://opencv.org)
 * [Numpy](https://NumPy.org/)
 * [Dlib](https://dlib.net/)
@@ -97,16 +96,14 @@ testing.
 * [Bootstrap](https://getbootstrap.com)
 * [JQuery](https://jquery.com)
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="right">(<a href="#top">↑</a>)</p>
 
 
 ## Getting Started
-
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
-
 The requirement for this Python project is a webcam through which we will capture images.
 We need to have Python ([3.6](https://www.python.org/downloads/release/python-360/)version recommended) installed on your system.
 Any IDE would be good to run the project([Pycharm](https://www.jetbrains.com/pycharm/download/#section=windows) Recommended ).
@@ -121,14 +118,13 @@ Install [GitBash](https://git-scm.com/download/win) to clone the repo or just [d
   ```
 
 ### Installation
-
 1. Clone the repo
    ```sh
    git clone https://github.com/BSH2409/Minor_Project.git
    ```
 2. Install pip packages 
   (Taking assumption that python was installed successfully)
-   * OpenCV
+  * OpenCV
   ```sh
   pip install opencv-python
   ```
@@ -158,61 +154,72 @@ Install [GitBash](https://git-scm.com/download/win) to clone the repo or just [d
 
 Voilà, All Set.
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="right">(<a href="#top">↑</a>)</p>
 
 ## Advantages
 
-• The detected abnormal behavior is
-corrected through alarms in real time.
-• Component establishes interface with other drivers very easily.
-• Life of the driver can be saved by alerting him using the alarm system.
-• Speed of the vehicle can be controlled.
-• Traffic management can be maintained by reducing accidents.
-• Practically applicable
+• The detected abnormal behavior is corrected through alarms in real time.<br />
+• Component establishes interface with other drivers very easily.<br />
+• Life of the driver can be saved by alerting him using the alarm system.<br />
+• Speed of the vehicle can be controlled.<br />
+• Traffic management can be maintained by reducing accidents.<br />
+• Practically applicable<br />
 
 ## Applications
-• This system can be used in factories to alert the workers.
-• If found drowsy, the alarm system gets activated and the driver is alerted.
-• If there is any obstacles it is alerted to the driver.
-• This system can also be used for railway drivers.
+• This system can be used in factories to alert the workers.<br />
+• If found drowsy, the alarm system gets activated and the driver is alerted.<br />
+• If there is any obstacles it is alerted to the driver.<br />
+• This system can also be used for railway drivers.<br />
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="right">(<a href="#top">↑</a>)</p>
 
 
-## Roadmap
+## Model BluePrint
 
-- [] Feature 1
-- [] Feature 2
-- [] Feature 3
-    - [] Nested Feature
+The below image is an example of a Dlib's 68 points model. There we can see that points from 1 to 68. But sometimes we don't need all 68 feature points, then for that, we will use only the eye landmarks and customize those points according to our requirements.
+<div align="center"><img src="images/dlib.png" alt="68-landmark"></div><br />
+We need to initialize dlib’s HOG + Linear SVM-based face detector and then load the facial landmark predictor from disk:
+```sh
+detector = dlib.get_frontal_face_detector()
+predictor = dlib.shape_predictor("predictor\\shape_predictor_68_face_landmarks.dat")
+```
+For further References on Dlib visit : [68_landmark](https://www.pyimagesearch.com/2017/04/03/facial-landmarks-dlib-opencv-python/)
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+Drowsiness Classifier:
+We use the EAR(Eye Aspect Ratio) to determine whether the user is active/drowsy/asleep.
+We find the ratio of height and width of the eye to infer the open or close state of the eye.The ratio falls to approximately zero when the eye is close but remains constant when they are open.
+<div align="center">
+  <img src="images/EAR.png" alt="ear"><br />
+  <img src="images/EAR.jpg" alt="ear">
+ </div>
+
+
+<p align="right">(<a href="#top">↑</a>)</p>
 
 
 ## Contributions
 
 This project is a result of teamwork and wouldn't be possible without their help and our mentor's guidance.
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="right">(<a href="#top">↑</a>)</p>
 
 ## License
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="right">(<a href="#top">↑</a>)</p>
 
 ## Contact
 
-Bhartik Harchand - [@instagram_handle](https://www.instagram.com/_._bsh_._/) - bsh.bhartik@gmail.com
+Bhartik Harchand - [Instagram](https://www.instagram.com/_._bsh_._/) - bsh.bhartik@gmail.com
 
 Project Link: [https://github.com/BSH2409/Minor_Project](https://github.com/BSH2409/Minor_Project)
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="right">(<a href="#top">↑</a>)</p>
 
 
-## Acknowledgments
+## References
 
 * []()
 * []()
 * []()
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-[product-screenshot]: images/_main.png
+<p align="right">(<a href="#top">↑</a>)</p>
