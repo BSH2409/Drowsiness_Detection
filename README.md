@@ -176,7 +176,7 @@ We find the ratio of height and width of the eye to infer the open or close stat
 ## Flow of the Program
 
 <div align="center">
-<img src="images/flow.png" alt="flowchart"><br />
+<img src="images/flowchart.png" alt="flowchart"><br />
   </div>
 <p align="right">(<a href="#top">↑</a>)</p>
 
