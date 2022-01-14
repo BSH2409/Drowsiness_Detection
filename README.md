@@ -172,7 +172,7 @@ Drowsiness Classifier:
 Drowsiness Classifier: the EAR (Eye Aspect Ratio) is calculated to determine whether the user is active/drowsy/asleep. To do so, the ratio of height and width of the eye is determined to infer the open or close state of the eye. The ratio falls to approximately zero when the eye is closed but remains constant when they are open. 
 <div align="center">
   <img src="images/EAR.png" alt="ear"><br />
-  <img src="images/EAR.jpg" alt="ear">
+  <img src="images/EARref.jpg" alt="ear">
  </div>
 
 
