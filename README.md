@@ -1,6 +1,6 @@
 <div id="top"></div>
 <div align="center">
-  <a href="https://github.com/BSH2409/Minor_Project">
+  <a href="https://github.com/BSH2409/Drowsiness_Detection">
     <img src="images/icon.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -11,14 +11,14 @@ TECHNIQUES</h3>
 
   <p align="center">
     <br />
-    <a href="https://github.com/BSH2409/Minor_Project"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/BSH2409/Drowsiness_Detection"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/BSH2409/Minor_Project">View Demo</a>
+    <a href="https://github.com/BSH2409/Drowsiness_Detection">View Demo</a>
     ·
-    <a href="https://github.com/BSH2409/Minor_Project/issues">Report Bug</a>
+    <a href="https://github.com/BSH2409/Drowsiness_Detection/issues">Report Bug</a>
     ·
-    <a href="https://github.com/BSH2409/Minor_Project/issues">Request Feature</a>
+    <a href="https://github.com/BSH2409/Drowsiness_Detection/issues">Request Feature</a>
   </p>
 </div>
 
@@ -47,16 +47,7 @@ following:
 3. Behavioural measures
 
 <h4>Proposed Method</h4>
-We use the approach based on behavioural measures as this approach will be mostly
-focusing on amount of eye closure also called (PERCLOS) percentage of closure as it
-provides the most accurate information on drowsiness. It is also non-intrusive in nature,
-hence does not affect the state of the driver and also the driver feels totally comfortable with
-this system. Environmental factors like road condition does not affect this system. The case
-of micro nap is also detected according the given threshold value. The development of this
-system includes face identification and tracking, detection and location of the human eye,
-human eye tracking, eye state detection, and driver fatigue testing. The key parts of the
-detection framework fused the detection and location of human eyes and driver fatigue
-testing.
+This approach will be mostly focused on the amount of eye ratio also called (EAR) Eye Aspect Ratio as it provides the most accurate information on drowsiness. It is also non-intrusive, hence does not affect the state of the driver, and also the driver feels comfortable with this system. Environmental factors like road conditions do not affect this system. The case of micro nap is also detected according to the given threshold value. The development of this system includes face identification and tracking, detection and location of the human eye, human eye tracking, eye state detection, and driver fatigue testing. 
 <p align="right">(<a href="#top">↑</a>)</p>
 
 
@@ -77,6 +68,20 @@ testing.
 ## Getting Started
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
+
+### Test Bed
+
+i.	IDE- Jupyter Notebook 6.4.5
+
+ii.	System benchmarks:
+
+  •	OS   - Windows 10
+  
+  •	CPU – AMD Ryzen 3
+  
+  •	GPU – Radeon Vega 8 
+  
+  •	RAM – 8GB
 
 ### Prerequisites
 The requirement for this Python project is a webcam through which we will capture images.<br />
@@ -125,7 +130,7 @@ Install [GitBash](https://git-scm.com/download/win) to clone the repo or just [d
   ```sh
   pip install flask
   ```
-3. Run the [app.py](https://github.com/BSH2409/Minor_Project/blob/main/app.py) in your IDE
+3. Run the [app.py](https://github.com/BSH2409/Drowsiness_Detection/blob/main/app.py) in your IDE
 
 Voilà, All Set.
 
@@ -149,8 +154,9 @@ Voilà, All Set.
 <p align="right">(<a href="#top">↑</a>)</p>
 
 
-## Model BluePrint
+## Project Design
 
+### Model Design
 The below image is an example of a Dlib's 68 points model. There we can see that points from 1 to 68. But sometimes we don't need all 68 feature points, then for that, we will use only the eye landmarks and customize those points according to our requirements.
 <div align="center"><img src="images/dlib.png" alt="68-landmark"></div><br />
 We need to initialize dlib’s HOG + Linear SVM-based face detector and then load the facial landmark predictor from disk:
@@ -163,8 +169,7 @@ For further References on Dlib visit :
 [Facial Landmark](https://www.pyimagesearch.com/2017/04/03/facial-landmarks-dlib-opencv-python/)
 
 Drowsiness Classifier:
-We use the EAR(Eye Aspect Ratio) to determine whether the user is active/drowsy/asleep.
-We find the ratio of height and width of the eye to infer the open or close state of the eye.The ratio falls to approximately zero when the eye is close but remains constant when they are open.
+Drowsiness Classifier: the EAR (Eye Aspect Ratio) is calculated to determine whether the user is active/drowsy/asleep. To do so, the ratio of height and width of the eye is determined to infer the open or close state of the eye. The ratio falls to approximately zero when the eye is closed but remains constant when they are open. 
 <div align="center">
   <img src="images/EAR.png" alt="ear"><br />
   <img src="images/EAR.jpg" alt="ear">
@@ -175,14 +180,58 @@ We find the ratio of height and width of the eye to infer the open or close stat
 
 ## Flow of the Program
 
-<div align="center">
-<img src="images/flowchart.png" alt="flowchart"><br />
-  </div>
+1)	Image Capture
+ Utilizing a web camera introduced inside the automobile we can get the picture of the driver. Even though the camera creates a video clip, we have to apply the developed algorithm on each edge of the video stream.<br>
+2)	Dividing into Frames  
+We are dealing with a real-time situation where the video is recorded and has to be processed. But the processing or application of the algorithm can be done only on an image. Hence the captured video has to be divided into frames for analysis. Adjusting brightness and converting into greyscale 
+3)	Face Detection  <br>
+i.	Detecting the facial landmarks using the Dlib model.<br>
+ii.	Creating an ROI and returning the coordinates of the boundary box.<br>
+iii.	Detect the eyes from ROI.<br>
+iv.	Analyse and extract the landmarks of both the eyes.<br>
+v.	Calculating the blink ratio (EAR).<br>
+4)	Passing the parameters (Eye vertical and horizontal distance and EAR) to our trained classifier.
+5)	Retrieving the status for each frame through our classifier.
+6)	Determining whether the user is active/drowsy/sleep<br>
+i.	Calculate the active/drowsy/sleep score that is simply the number of consecutive frames for which the user had been classified as active/drowsy/asleep.<br>
+ii.	If the active/drowsy/sleep score is more than the threshold value, the program sets the current status of the user respectively.<br>
+7)	Determining the threshold value:<br>
+i.	As we know blinking of an eye or closing eye for a short duration of time can’t be counted in sleeping or drowsy status. To avoid the alarm for triggering in every frame in which the eyes are closed, a threshold must be set.<br>
+ii.	The avg. blinking of an eye takes about 0.1 to 0.4 seconds (avg. ~0.2 seconds) and OpenCV works on 30 fps by default. Hence the number of frames for which sleeping can be ignored is 6 frames (30fps *0.2sec). Hence, the threshold is set to 6.<br>
+8)	Triggering an alarm when the Status is SLEEPY.
+9)	Returning a Json file consisting of Status, Avg. Sleep Time, Threat Level to the browser through WSGI routes to dynamically display the live details of the user.
 <p align="right">(<a href="#top">↑</a>)</p>
+
+## Data Set Used
+
+i.  Open Eye Data Set- A huge data set of about 10,000 images of different regions, languages, skin tones were available.
+Data Set Name- Labelled Faces in the Wild Home.
+
+ii.	Drowsy Eye Data Set- No verified data set was found for drowsy data so we prepared our dataset for drowsy data.
+
+iii.	Closed Eye Data Set- A moderate-size dataset of about 1,200 images was available with faces from different regions.
+Data Set Name- Closed Eyes in The Wild
+
+## Result and Output
+* Web Application Template
+
+![image](https://user-images.githubusercontent.com/79904688/149522863-82d5dee7-8fbd-4d6d-a265-4aa1704cda5e.png)
+
+* Result with Drowsy Status
+
+![image](https://user-images.githubusercontent.com/79904688/149522894-256d7c80-2594-4d84-90aa-603932ba0b0f.png)
+
+* Result with Active Status
+
+![image](https://user-images.githubusercontent.com/79904688/149522919-0d76a059-abdd-4dbe-b5ba-f8d8f8f12ed0.png)
+
+* Result with Sleeping Status
+
+![image](https://user-images.githubusercontent.com/79904688/149522965-c7b708a2-0431-4f5b-8372-6f854cbffa12.png)
 
 ## Contact
 
 Bhartik Harchand - [Instagram](https://www.instagram.com/_._bsh_._/) - bsh.bhartik@gmail.com
 
-Project Link: [https://github.com/BSH2409/Minor_Project](https://github.com/BSH2409/Minor_Project)
+Project Link: [https://github.com/BSH2409/Minor_Project](https://github.com/BSH2409/Drowsiness_Detection)
 
