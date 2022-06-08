@@ -215,19 +215,23 @@ Data Set Name- Closed Eyes in The Wild
 ## Result and Output
 * Web Application Template
 
-![image](https://user-images.githubusercontent.com/79904688/149522863-82d5dee7-8fbd-4d6d-a265-4aa1704cda5e.png)
+![image](https://user-images.githubusercontent.com/79904688/172585637-5b595da6-807e-4326-999a-07865bb7b28c.png)
+
 
 * Result with Drowsy Status
 
-![image](https://user-images.githubusercontent.com/79904688/149522894-256d7c80-2594-4d84-90aa-603932ba0b0f.png)
+![image](https://user-images.githubusercontent.com/79904688/172585706-7309f8a7-1fcc-4be0-bf08-15a61b531674.png)
+
 
 * Result with Active Status
 
-![image](https://user-images.githubusercontent.com/79904688/149522919-0d76a059-abdd-4dbe-b5ba-f8d8f8f12ed0.png)
+![image](https://user-images.githubusercontent.com/79904688/172585759-4adce167-8dcd-4afa-b545-27e98fff14c0.png)
+
 
 * Result with Sleeping Status
 
-![image](https://user-images.githubusercontent.com/79904688/149522965-c7b708a2-0431-4f5b-8372-6f854cbffa12.png)
+![image](https://user-images.githubusercontent.com/79904688/172585808-5f01d429-5b48-4588-859e-8ad82dc6ebfb.png)
+
 
 ## Contact
 
